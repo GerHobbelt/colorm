@@ -1,7 +1,9 @@
 # ColorM
+
 ColorM is a C++11 header-only color conversion and manipulation library for [CSS colors](https://www.w3.org/TR/css-color-4/) with an API similar to [chroma.js](https://github.com/gka/chroma.js/)'s API. This library is released under [the Unlicense license](https://unlicense.org/).
 
 ## Table of contents
+
 - [Usage](#usage)
 - [Color classes](#color-classes)
     - [Constructors](#constructors)
@@ -26,7 +28,9 @@ You can copy the colorm.h file and add it to your project, and add the #include 
 ```c++
 #include "colorm.h"
 ```
+
 ## Color classes
+
 This library defines [the following color classes](https://www.w3.org/TR/css-color-4/):
 - Rgb: sRGB color (The maximum value for red, green, and blue is 255)
 - Hsl: HSL color
@@ -46,6 +50,7 @@ This library defines [the following color classes](https://www.w3.org/TR/css-col
 - Rec2020: Rec.2020 color
 
 ### Constructors
+
 Each color class has the following constructors:
 
 *default constructor*
@@ -570,6 +575,7 @@ for (int i = 0; i < 24; ++i) {
 // #337336 #4e792f #6e7b31 #907a3e #ae7956 #c57a76 #d1809a #d48bbc
 // #d09bd7 #c9aeea #c3c2f2 #c2d5f3 #c9e5f0 #d7f1ef #ebf9f3 #ffffff
 ```
+
 ![](images/T__000000.png) ![](images/T__100713.png) ![](images/T__19112a.png) ![](images/T__1a1f3d.png) ![](images/T__18314a.png) ![](images/T__15454e.png) ![](images/T__17574a.png) ![](images/T__206740.png) ![](images/T__337336.png) ![](images/T__4e792f.png) ![](images/T__6e7b31.png) ![](images/T__907a3e.png) ![](images/T__ae7956.png) ![](images/T__c57a76.png) ![](images/T__d1809a.png) ![](images/T__d48bbc.png) ![](images/T__d09bd7.png) ![](images/T__c9aeea.png) ![](images/T__c3c2f2.png) ![](images/T__c2d5f3.png) ![](images/T__c9e5f0.png) ![](images/T__d7f1ef.png) ![](images/T__ebf9f3.png) ![](images/T__ffffff.png)
 
 ## Color scale
@@ -628,11 +634,12 @@ for (int i = 0; i < 5; ++i) {
 }
 // c[0] #808000 c[1] #dede00 c[2] #fff06a c[3] #ffd9a2 c[4] #ffc0cb
 ```
+
 ![](images/Y_--0z00_808000.png) ![](images/Y_--0z25_dede00.png) ![](images/Y_--0z50_fff06a.png) ![](images/Y_--0z75_ffd9a2.png) ![](images/Y_--1z00_ffc0cb.png)
 
 ![](images/Y_c-0_808000.png) ![](images/Y_c-1_dede00.png) ![](images/Y_c-2_fff06a.png) ![](images/Y_c-3_ffd9a2.png) ![](images/Y_c-4_ffc0cb.png)
 
-To applay [the hue interpolation strategy](https://www.w3.org/TR/css-color-4/#hue-interpolation):
+To apply [the hue interpolation strategy](https://www.w3.org/TR/css-color-4/#hue-interpolation):
 
 - shorter() / shorter(int index)
 - longer() / longer(int index)
@@ -742,6 +749,7 @@ for (int i = 0; i < 7; ++i) {
 }
 // c[0] #ffa500 c[1] #fbbe00 c[2] #eaca00 c[3] #ccc900 c[4] #a1bc00 c[5] #68a400 c[6] #008000
 ```
+
 ![](images/Y_--0z00_ffa500.png) ![](images/Y_--0z17_fbbe00.png) ![](images/Y_--0z33_eaca00.png) ![](images/Y_--0z50_ccc900.png) ![](images/Y_--0z67_a1bc00.png) ![](images/Y_--0z83_68a400.png) ![](images/Y_--1z00_008000.png)
 
 ![](images/Y_c-0_ffa500.png) ![](images/Y_c-1_fbbe00.png) ![](images/Y_c-2_eaca00.png) ![](images/Y_c-3_ccc900.png) ![](images/Y_c-4_a1bc00.png) ![](images/Y_c-5_68a400.png) ![](images/Y_c-6_008000.png)
@@ -749,6 +757,7 @@ for (int i = 0; i < 7; ++i) {
 ## Example
 
 Here is an example program that replaces each color string in a file with another color string:
+
 ```c++
 #include "colorm.h"
 #include <fstream>
@@ -809,6 +818,7 @@ int main()
 	o << std::string(ci, ce);
 }
 ```
+
 This program can convert *A.html* to *B.html*:
 
 *A.html*
@@ -819,6 +829,7 @@ This program can convert *A.html* to *B.html*:
 <span style="font-size: 64px; color: #FEA510;">Z</span>
 <span style="font-size: 64px; color: hsl(65, 80%, 50%);">Z</span>
 ```
+
 ![](images/screen/A_html.png)
 
 *B.html*
@@ -829,4 +840,5 @@ This program can convert *A.html* to *B.html*:
 <span style="font-size: 64px; color: hsl(33, 81%, 66%);">Z</span>
 <span style="font-size: 64px; color: hsl(68, 46%, 60%);">Z</span>
 ```
+
 ![](images/screen/B_html.png)
